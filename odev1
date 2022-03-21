@@ -1,0 +1,56 @@
+package java102patika;
+
+import java.util.*;
+import java.io.*;
+
+class Course {
+    int courseId;
+    String courseName;
+    int price;
+
+    public Course(int courseId, String courseName, int price) {
+        this.courseId = courseId;
+        this.courseName = courseName;
+        this.price = price;
+    }
+}
+
+class Teacher{
+    int teacherId;
+    String teacherName;
+    String teacherLastname;
+
+    public Teacher(int teacherId, String teacherName, String teacherLastname) {
+        this.teacherId = teacherId;
+        this.teacherName = teacherName;
+        this.teacherLastname = teacherLastname;
+    }
+}
+
+class CourseManager{
+
+    public void add(Course course ){
+        System.out.println("kurs eklendi " + course.courseName);
+    }
+    public void delete(Course course ){
+        System.out.println("kurs silindi "+ course.courseName);
+    }
+
+}
+
+class deneme{
+
+    public static void main(String[] args) {
+        Course c1=new Course(1,"mat",0);
+        Course c2=new Course(2,"turkce",10);
+        Course c3=new Course(3,"fizik",20);
+        Course[] courses={c1,c2,c3};
+        for (Course cs:courses) {
+            System.out.println(cs.courseName);
+        }
+        CourseManager courseManager=new CourseManager();
+        courseManager.add(c1);
+        courseManager.delete(c2);
+
+    }
+}
